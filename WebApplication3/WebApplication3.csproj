@@ -67,6 +67,7 @@
     <Content Include="createAccount.aspx" />
     <Content Include="date-picker\datepicker.css" />
     <Content Include="date-picker\datepicker.js" />
+    <Content Include="html2canvas.js" />
     <Content Include="packages.config" />
     <Content Include="css\bootstrap-grid.css.map" />
     <Content Include="css\bootstrap-grid.min.css.map" />

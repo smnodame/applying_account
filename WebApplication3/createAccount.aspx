@@ -365,6 +365,13 @@
     <script>
         function check_submit() {
             var Myform = document.form;
+            try {
+                if (document.form.u_type.value == 1)
+                    console.log(' work ')
+            } catch (err) {
+                Myform = document.form[0]
+            }
+            console.log(Myform)
             if (Myform.u_type.value == "1") {
                 if (Myform.t_12.value == "") {
                     alert('กรุณากรอกข้อมูล \n');
@@ -506,24 +513,6 @@
 
     </script>
     <script>
-        //$(function () {
-        //    var doc = new jsPDF();
-        //    var specialElementHandlers = {
-        //        '#editor': function (element, renderer) {
-        //            return true;
-        //        }
-        //    };
-
-        //    $('#cmd').click(function () {
-        //        console.log('==========')
-        //        console.log(doc)
-        //        doc.fromHTML($('html').html(), 15, 15, {
-        //            'width': 170,
-        //            'elementHandlers': specialElementHandlers
-        //        });
-        //        doc.save('sample-file.pdf');
-        //    });
-        //})
 
 // This code is collected but useful, click below to jsfiddle link.
 
@@ -551,12 +540,12 @@
                                 <div class="col-md-12 form-box" style="padding-left: 0px">
 
                                     <center></center>
-                                    <div class="form-top">
+                                    <div id="header_detail" class="form-top">
                                         <div class="form-top-left">
 
                                         </div>
                                         
-                                        <p align="right">วันที่ <input type="text" style="display: inline; width: 100px; margin-left: 20px" class="form-control" data-toggle="datepicker" name="draft_date"></p>
+                                        <p style="text-align: right;">วันที่ <input type="text" style="display: inline; width: 100px; margin-left: 20px" class="form-control" data-toggle="datepicker" name="draft_date"></p>
                                          <p align="right">ชื่อผู้เเนะนำการลงทุน <input type="text" style="display: inline; width: 150px; margin-left: 20px; margin-top: 20px" class="form-control" name="suggester_name"> (สำหรับเจ้าหน้าที่)</p>
                                         <p align="right">ชื่อผู้แนะนำการลงทุน_________________________(สำหรับเจ้าหน้าที่)</p>
                                         <p align="right">รหัสผู้แนะนำการลงทุน_________________________(สำหรับเจ้าหน้าที่)</p>
@@ -566,9 +555,7 @@
                                             <INPUT TYPE="radio" NAME="u_type" value="2" onclick="u_type2();">&nbsp;นิติบุคคล
                                         </p><br>
                                         
-                                    </div>
-
-                                    <br><table class="tg" border="1" width="100%">
+                                    </div><table class="tg" border="1" width="100%">
                                         <tr>
 
                                             <th class="tg-buov" colspan="3" style="font-weight: normal"><FONT FACE="db_helvethaica_x55_regular" font-size="5px" class="auto-style2">ประเภทบัญชี</FONT></th>
@@ -1212,7 +1199,6 @@
                                         </tr>
                                     </table>
                                     <!////////////////////////////////////////////////////////////////////////////////////////////>
-                                    <div style="height:40px;"></div>
                                     <div class="assessment-container container">
                                         <div class="row">
                                             <div class="col-md-12 form-box" style="padding-left: 0px">
@@ -1521,7 +1507,7 @@
                                                                                           <INPUT TYPE="radio" name="sex4" Value="3">
                                                                                         <span style="margin-left: 8px;">นาง</span>
 
-                                                                                         <span style="margin-left: 12px;">ชื่อ</span>
+                                                                                         <span style="margin-left: 12px; color: red">*ชื่อ</span>
                                                                                          <INPUT style="display: inline; width: 150px; margin-left: 10px" class="form-control" TYPE="TEXT" NAME="t_106"  maxlength=17  />
                                                                                          <span style="margin-left: 12px;">นามสกุล</span>
                                                                                          <INPUT style="display: inline; width: 150px; margin-left: 10px" class="form-control" TYPE="TEXT" NAME="t_107"  maxlength=17  />
@@ -1839,11 +1825,11 @@
                                                     </div>
 
                                                 </div>
-                                                <div class="button_action">
+                                                <div class="button_action" style="margin-bottom: 20px">
                                                     <CENTER>
-                                                        <button id="printButton" type="button">Preview</button>
-                                                        <button type="submit" value="Submit">Submit</button>
-                                                        <button type="reset" value="Reset">Reset</button>
+                                                        <button id="printButton" class="btn btn-secondary" type="button">Preview</button>
+                                                        <button class="btn btn-success" value="Submit">Submit</button>
+                                                        <button type="reset" class="btn btn-warning" value="Reset">Reset</button>
                                                     </CENTER>
                                                 </div>
                                                     
@@ -1853,8 +1839,6 @@
 
 </div>
 </div>
-<!-- Trigger the modal with a button -->
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -1863,8 +1847,14 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title">Preview</h4>
+          <div style="display: flex; flex-direction: row">
+                
+                <h4 class="modal-title">Preview</h4>
+                <div style="flex: 1"></div>
+                <button id="print_or_pdf" style="margin-right: 20px;" type="button" class="btn btn-success">Print Or Save PDF</button>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+          </div>
+        
       </div>
       <div id="previewContent" class="modal-body previewContent">
       </div>
@@ -1911,13 +1901,93 @@
               -webkit-box-shadow: none;
               box-shadow: none;
             }
+            .previewContent select.form-control {
+              -moz-appearance: none;
+               -webkit-appearance: none;
+               appearance: none;
+            }
+
         </style>
+        <style media="print">
+            .account_type {
+                display: none !important;
+            }
+
+            span {
+                color: black !important;
+            }
+
+            .warning_account {
+                 display: none !important;
+            }
+
+            .download_file {
+                display: none !important;
+            }
+            .button_action {
+                 display: none !important;
+            }
+
+            input[type="text"], input[type="number"], input[type="Numbers"], input[type="E-mail"], 
+            select.form-control {
+              background: transparent;
+              border: none;
+              border-bottom: 1px solid #000000;
+              -webkit-box-shadow: none;
+              box-shadow: none;
+              border-radius: 0;
+              height: 28px
+            }
+
+            #myModal {
+                display: none !important;
+            }
+
+            input[type="text"]:focus, input[type="number"]:focus, input[type="Numbers"], input[type="E-mail"], 
+            select.form-control:focus {
+              -webkit-box-shadow: none;
+              box-shadow: none;
+            }
+            select.form-control {
+              -moz-appearance: none;
+               -webkit-appearance: none;
+               appearance: none;
+            }
+
+        </style>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
+        <script src="html2canvas.js"></script>
             <script>
+                    //html2canvas(document.body).then(function (canvas) {
+                    //    document.body.appendChild(canvas);
+                    //    function savePDF() {
+                    //        try {
+                    //            canvas.getContext('2d');
+                    //            var imgData = canvas.toDataURL("image/jpeg", 1.0);
+                    //            var pdf = new jsPDF('p', 'mm', [297, 210]);
+                    //            pdf.addImage(imgData, 'JPEG', 5, 5);
+                    //            var namefile = prompt("insert name of file");
+                    //            pdf.save(namefile + ".pdf");
+                    //        } catch (e) {
+                    //            alert("Error description: " + e.message);
+                    //        }
+
+                    //    }
+                    //    savePDF()
+                    //});
+
                     $(function () {
+
                         $("#printButton").click(function () {
+                            $("#previewContent").empty()
                             $("#previewContent").append($("#content").clone())
+                            $(".previewContent :input").prop("disabled", true);
+                            $('#myModal').modal('show');
                         })
 
+                        $("#print_or_pdf").click(function () {
+                            window.print()
+                        })
                     
                     var amphoes = []
                     var changwats = []
