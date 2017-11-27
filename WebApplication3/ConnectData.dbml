@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Test" Class="ConnectDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-HUT5VHE\SQLEXPRESS;Initial Catalog=Test;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TestConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.AddrAnother" Member="AddrAnothers">
+    <Type Name="AddrAnother">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Building" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Alley" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Locality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TelPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Attorney" Member="Attorneys">
+    <Type Name="Attorney">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDGovernment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Another" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Expired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="relationship" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TypeAccount" Member="TypeAccounts">
+    <Type Name="TypeAccount">
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TypeName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LimitAccount" Member="LimitAccounts">
+    <Type Name="LimitAccount">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Limt" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="draft_date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="suggester_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="type_Account" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="total_limit" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="a_1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="a_2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="a_3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CustNo_Mate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SendAddr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CustInformation" Member="CustInformations">
+    <Type Name="CustInformation">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Prefix1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FName1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LName1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Prefix2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FName2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LName2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDGovernment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PassportNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Expired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaritalStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Guilty" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GuiltyDes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GuiltyYear" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CareerInformation" Member="CareerInformations">
+    <Type Name="CareerInformation">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Business" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Position" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Salary" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Experience" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OtherIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="OtherSourcesIncome" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AnnualSales" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Political" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="PoliticalPosition" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AddrWork" Member="AddrWorks">
+    <Type Name="AddrWork">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="WorkplaceName" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+      <Column Name="No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Street" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="building" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="alley" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="locality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="province" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Fax" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.RefPerSonInformation" Member="RefPerSonInformations">
+    <Type Name="RefPerSonInformation">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Prefix1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FName1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LName1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="relationship" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="career" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TypeIDAdrr" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InforCorporate" Member="InforCorporates">
+    <Type Name="InforCorporate">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="typecompany" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RegisterDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RegisterNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RegisteCountry" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TaxID" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="typebisiness" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="RegisteredCapital" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Paid_up_capital" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Another1" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="Another2" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TypeCareer" Member="TypeCareers">
+    <Type Name="TypeCareer">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Code" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Description" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.AddrCurrent" Member="AddrCurrents">
+    <Type Name="AddrCurrent">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="NameLocal" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="No" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TypeIDAdrr" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Street" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Building" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Alley" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Locality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="District" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Province" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="ZipCode" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TelPhone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="fax" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.InforPayment" Member="InforPayments">
+    <Type Name="InforPayment">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ATS" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Bank_1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Branch1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccountN01" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TypeAccount1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="e_Dividend" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="Bank2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Branch2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="AccountN02" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TypeAccount2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Function Name="dbo.DeleteNoSuccessSP" Method="DeleteNoSuccessSP">
+    <Parameter Name="pCustAcc" Type="System.String" DbType="NVarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>
