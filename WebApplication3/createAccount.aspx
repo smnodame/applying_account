@@ -365,6 +365,13 @@
     <script>
         function check_submit() {
             var Myform = document.form;
+            //var newInput = document.createElement('input');
+            //newInput.type = 'hidden';
+            //var clone = $('H4').clone();
+            //newInput.val = clone;
+            //newInput.name = 'x';
+            //Myform.append(newInput);
+           
             try {
                 if (document.form.u_type.value == 1)
                     console.log(' work ')
@@ -499,6 +506,7 @@
                 document.getElementsByName('3')[0].focus();
                 return false;
             }
+
         }
 
 
@@ -607,7 +615,7 @@
                                                 วงเงิน <INPUT TYPE="number" style="display: inline; width: 150px; margin-left: 20px" class="form-control" id="sbl" NAME="t_8" Money="number" SIZE=17 MAXLENGHT=17><br>--%>
 
                                                 <div style="margin-bottom: 12px">
-                                                    <INPUT TYPE="Checkbox" name="account7" Value="1 " uncheck>
+                                                    <INPUT TYPE="Checkbox" name="account8" Value="1 " uncheck>
                                                     <span style="margin-left: 6px">ยินยอมให้บริษัท ทำธุรกรรมการยืมเเละการยืมหลักทรัพย์</span>
                                                 </div>
 
@@ -629,7 +637,7 @@
                                                  <div style="margin-bottom: 12px">
                                                     <INPUT TYPE="Checkbox" name="account7" Value="1 " uncheck>
                                                     <span style="margin-left: 6px">อื่นๆ</span>
-                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" NAME="t_10" TYPE="text" Money="number" SIZE=17 MAXLENGHT=17 />
+                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" NAME="t_10" TYPE="number"  SIZE=17 MAXLENGHT=17 />
                                                 </div>
                                                 <%--<INPUT TYPE="Checkbox" name="account7" Value="1" uncheck>อื่นๆ
                                                 <INPUT TYPE="TEXT" TYPE="number" style="display: inline; width: 150px; margin-left: 20px" class="form-control" NAME="t_10" Money="number" SIZE=17 MAXLENGHT=17><br>
@@ -805,9 +813,9 @@
 
                                                 <div style="margin-bottom: 24px">
                                                     <span style="margin-left: 12px; color: red">โทรศัพท์มือถือ</span><font color="red">*</font>
-                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="Numbers" NAME="t_26" SIZE=40 MAXLENGHT=40  />
+                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="Number" NAME="t_26" SIZE=40 MAXLENGHT=40  />
                                                 </div>
-                                                <%--โทรศัพท์มือถือ<font color="red">*</font><INPUT TYPE="Numbers" NAME="t_26" SIZE=40 MAXLENGHT=40><br>--%>
+                                                <%--โทรศัพท์มือถือ<font color="red">*</font><INPUT TYPE="Number" NAME="t_26" SIZE=40 MAXLENGHT=40><br>--%>
                                                 
                                                 <div style="margin-bottom: 12px">
                                                     <span style="margin-left: 12px">ชื่อสถานที่ทำงาน</span>
@@ -841,7 +849,7 @@
                                                     <select style="display: inline; width: 150px; margin-left: 8px" class="form-control" id="place1-1" NAME="t_28_5" class="form-control">
                                                     </select>
                                                     <span style="margin-left: 8px;">รหัสไปรษณีย์</span>
-                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="TEXT" NAME="t_28_6" maxlength=17 />
+                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number" NAME="t_28_6" maxlength=17 />
                                                 </div>
 
                                                 <%--เลขที่<INPUT TYPE="TEXT" NAME="t_28" SIZE=10 MAXLENGHT=10>
@@ -878,13 +886,13 @@
                                                     <select style="display: inline; width: 150px; margin-left: 8px" class="form-control" id="place2-1" NAME="t_32_2" class="form-control">
                                                     </select>
                                                     <span style="margin-left: 8px;">รหัสไปรษณีย์</span>
-                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="TEXT" NAME="t_32_3" maxlength=17 />
+                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number" NAME="t_32_3" maxlength=17 />
                                                 </div>
                                                 <div style="margin-bottom: 12px">
                                                     <span style="margin-left: 8px;">โทรศัพท์</span>
-                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers"  NAME="t_33" maxlength=17 />
+                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number"  NAME="t_33" maxlength=17 />
                                                      <span style="margin-left: 8px;">โทรสาร</span>
-                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers"  NAME="t_34" maxlength=17 />
+                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number"  NAME="t_34" maxlength=17 />
                                                  </div>
                                                 <%--<br><br>
                                                 ที่อยู่ปัจจุบัน
@@ -900,14 +908,14 @@
                                                 <BR>--%>
 
 
-                                                <%--โทรศัพท์<INPUT TYPE="Numbers" NAME="t_33" SIZE=15 MAXLENGHT=15>โทรสาร<INPUT TYPE="Numbers" NAME="t_34" SIZE=15 MAXLENGHT=15><br>
+                                                <%--โทรศัพท์<INPUT TYPE="Number" NAME="t_33" SIZE=15 MAXLENGHT=15>โทรสาร<INPUT TYPE="Number" NAME="t_34" SIZE=15 MAXLENGHT=15><br>
                                                 <br>--%>
                                                 <span style="margin-left: 12px; color: red">*อาชีพ</span>
                                                 <div style="margin-bottom: 12px">
                                                     <INPUT TYPE="radio" name="Job" Value="1">
                                                     <span style="margin-left: 12px;">เจ้าของกิจการ/ค้าขาย Code 910</span>
                                                     <span style="margin-left: 12px;">กรณีเจ้าของกิจการ (ระบุ) ยอดขายต่อปี</span>
-                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers" TEXT="number"  NAME="t_127" maxlength=17 />
+                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number" TEXT="number"  NAME="t_127" maxlength=17 />
                                                 </div>
                                                 <div style="margin-bottom: 12px">
                                                     <INPUT TYPE="radio" name="Job" Value="2">
@@ -944,7 +952,7 @@
                                                     <span style="margin-left: 12px">รายได้อื่นๆ</span>
                                                     <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="number" NAME="t_40" SIZE=20 MAXLENGHT=20 />
                                                     <span style="margin-left: 12px">แหล่งที่มาของรายได้อื่นๆ</span>
-                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="number" NAME="t_41" SIZE=20 MAXLENGHT=20 />
+                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="TEXT" NAME="t_41" SIZE=20 MAXLENGHT=20 />
                                                 </div>
                                                 <%--<font color="red">*</font>ประเภทธุรกิจ<INPUT TYPE="TEXT" NAME="t_36" SIZE=20 MAXLENGHT=20>
                                                 ตำแหน่ง<INPUT TYPE="TEXT" NAME="t_37" SIZE=20 MAXLENGHT=20>
@@ -1084,7 +1092,7 @@
                                                                  </div>
                                                                 <div style="margin-bottom: 24px">
                                                                     <span style="margin-left: 12px; color: red">* โทรศัพท์มือถือ</span>
-                                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="Numbers" NAME="t_56" SIZE=40 MAXLENGHT=40  />
+                                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="Number" NAME="t_56" SIZE=40 MAXLENGHT=40  />
                                                                 </div>
                                                 
                                                                 <div style="margin-bottom: 12px">
@@ -1117,13 +1125,13 @@
                                                                       <select style="display: inline; width: 150px; margin-left: 8px" class="form-control" id="place3-1" NAME="t_61_2" class="form-control">
                                                                     </select>
                                                                     <span style="margin-left: 8px;">รหัสไปรษณีย์</span>
-                                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="TEXT" NAME="t_61_3" maxlength=17 />
+                                                                    <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number" NAME="t_61_3" maxlength=17 />
                                                                 </div>
                                                                 <div style="margin-bottom: 24px">
                                                                     <span style="margin-left: 12px;">โทรศัพท์</span>
-                                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="Numbers" NAME="t_62" SIZE=40 MAXLENGHT=40  />
+                                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="Number" NAME="t_62" SIZE=40 MAXLENGHT=40  />
                                                                     <span style="margin-left: 12px;">โทรสาร</span>
-                                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="Numbers" NAME="t_63" SIZE=40 MAXLENGHT=40  />
+                                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="Number" NAME="t_63" SIZE=40 MAXLENGHT=40  />
                                                                 </div>
                                                                    
                                                                 <span style="margin-left: 12px; color: red">*อาชีพ</span>
@@ -1131,7 +1139,7 @@
                                                                         <INPUT TYPE="radio" name="Job2" Value="1">
                                                                         <span style="margin-left: 12px;">เจ้าของกิจการ/ค้าขาย Code 910</span>
                                                                         <span style="margin-left: 12px;">กรณีเจ้าของกิจการ (ระบุ) ยอดขายต่อปี</span>
-                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers" TEXT="number"  NAME="t_128" maxlength=17 />
+                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number" TEXT="number"  NAME="t_128" maxlength=17 />
                                                                     </div>
                                                                     <div style="margin-bottom: 12px">
                                                                         <INPUT TYPE="radio" name="Job2" Value="2">
@@ -1161,7 +1169,7 @@
                                                                         <span style="margin-left: 12px">รายได้อื่นๆ</span>
                                                                         <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="number" NAME="t_69" SIZE=20 MAXLENGHT=20 />
                                                                         <span style="margin-left: 12px">แหล่งที่มาของรายได้อื่นๆ</span>
-                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="number" NAME="t_70" SIZE=20 MAXLENGHT=20 />
+                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="TEXT" NAME="t_70" SIZE=20 MAXLENGHT=20 />
                                                                     </div>
                                                                     <div style="margin-bottom: 12px">
                                                                         <span style="margin-left: 12px; color: red">*ตำแหน่งทางการเมือง</span>
@@ -1214,15 +1222,15 @@
                                                         <tr>
                                                             <td class="tg-h31u" colspan="3">
                                                                 <div style="margin-bottom: 12px">
-                                                                    <INPUT TYPE="radio" name="company1" Value="1 ">
+                                                                    <INPUT TYPE="radio" name="company1" Value="1">
                                                                     <span style="margin-left: 8px">บริษัทจำกัด</span>
-                                                                    <INPUT TYPE="radio" name="company1" Value="2 ">
+                                                                    <INPUT TYPE="radio" name="company1" Value="2">
                                                                     <span style="margin-left: 8px">ห้างหุ้นส่วนจำกัด</span>
-                                                                    <INPUT TYPE="radio" name="company1" Value="3 ">
+                                                                    <INPUT TYPE="radio" name="company1" Value="3">
                                                                     <span style="margin-left: 8px">ห้างหุ้นส่วนสามัญนิติบุคคล</span>
-                                                                    <INPUT TYPE="radio" name="company1" Value="4 ">
+                                                                    <INPUT TYPE="radio" name="company1" Value="4">
                                                                     <span style="margin-left: 8px">บริษัทมหาชน</span>
-                                                                    <INPUT TYPE="radio" name="company1" Value="5 ">
+                                                                    <INPUT TYPE="radio" name="company1" Value="5">
                                                                     <span style="margin-left: 8px">อื่นๆ</span>
                                                                     <INPUT style="display: inline; width: 250px; margin-left: 20px" class="form-control" TYPE="TEXT" NAME="t_72" SIZE=80 MAXLENGHT=80><br>
                                                                 </div>
@@ -1256,11 +1264,11 @@
                                                                 </div>
                                                                 <div style="margin-bottom: 12px">
                                                                     <span style="margin-left: 8px">ทุนจดทะเบียน</span>
-                                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="TEXT" NAME="t_80" SIZE=80 MAXLENGHT=80>
+                                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="Number" NAME="t_80" SIZE=80 MAXLENGHT=80>
                                                                 </div>
                                                                 <div style="margin-bottom: 12px">
                                                                     <span style="margin-left: 8px">ทุนจดทะเบียนชำระแล้ว</span>
-                                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="TEXT" NAME="t_81" SIZE=80 MAXLENGHT=80>
+                                                                    <INPUT style="display: inline; width: 150px; margin-left: 20px" class="form-control" TYPE="Number" NAME="t_81" SIZE=80 MAXLENGHT=80>
                                                                 </div>
                                                                 <br>
                                                                 <br>
@@ -1388,15 +1396,15 @@
                                                                         <select style="display: inline; width: 150px; margin-left: 8px" class="form-control" id="place4-1" NAME="t_96_5" class="form-control">
                                                                         </select>
                                                                         <span style="margin-left: 8px;">รหัสไปรษณีย์</span>
-                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="TEXT" NAME="t_96_6" maxlength=17 />
+                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number" NAME="t_96_6" maxlength=17 />
                                                                     </div>
                                                                     <div style="margin-bottom: 12px">
                                                                         <span style="margin-left: 8px">โทรศัพท์</span>
-                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers"  NAME="t_97" maxlength=17 />
+                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number"  NAME="t_97" maxlength=17 />
                                                                          <span style="margin-left: 8px;">โทรสาร</span>
-                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers"  NAME="t_98" maxlength=17 />
+                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number"  NAME="t_98" maxlength=17 />
                                                                           <span style="margin-left: 8px; color: red">* โทรศัพท์มือถือ</span>
-                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers"  NAME="t_99" maxlength=17 />
+                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number"  NAME="t_99" maxlength=17 />
                                                                         <span style="margin-left: 8px;">E-mail</span>
                                                                         <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="E-mail"  NAME="t_100" maxlength=17 />
                                                                      </div>
@@ -1412,9 +1420,9 @@
 
                                                                 <br>
 
-                                                                โทรศัพท์<INPUT TYPE="Numbers" NAME="t_97" SIZE=15 MAXLENGHT=20>โทรสาร<INPUT TYPE="Numbers" NAME="t_98" SIZE=15 MAXLENGHT=15>
+                                                                โทรศัพท์<INPUT TYPE="Number" NAME="t_97" SIZE=15 MAXLENGHT=20>โทรสาร<INPUT TYPE="Number" NAME="t_98" SIZE=15 MAXLENGHT=15>
 
-                                                                <font color="red">*</font>โทรศัพท์มือถือ<INPUT TYPE="Numbers" NAME="t_99" SIZE=15 MAXLENGHT=15>E-mail<INPUT TYPE="TEXT" NAME="t_100" NAME="E-mail" SIZE=15 MAXLENGHT=20><br>--%>
+                                                                <font color="red">*</font>โทรศัพท์มือถือ<INPUT TYPE="Number" NAME="t_99" SIZE=15 MAXLENGHT=15>E-mail<INPUT TYPE="TEXT" NAME="t_100" NAME="E-mail" SIZE=15 MAXLENGHT=20><br>--%>
 
                                                                 <span style="margin-left: 12px;">ที่อยู่อื่นๆ</span>
                                                                     <div style="margin-bottom: 12px">
@@ -1442,15 +1450,15 @@
                                                                         <select style="display: inline; width: 150px; margin-left: 8px" class="form-control" id="place5-1" NAME="t_101_5" class="form-control">
                                                                         </select>
                                                                         <span style="margin-left: 8px;">รหัสไปรษณีย์</span>
-                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="TEXT" NAME="t_101_6" maxlength=17 />
+                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number" NAME="t_101_6" maxlength=17 />
                                                                     </div>
                                                                     <div style="margin-bottom: 12px">
                                                                         <span style="margin-left: 8px">โทรศัพท์</span>
-                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers"  NAME="t_102" maxlength=17 />
+                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number"  NAME="t_102" maxlength=17 />
                                                                          <span style="margin-left: 8px;">โทรสาร</span>
-                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers"  NAME="t_103" maxlength=17 />
+                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number"  NAME="t_103" maxlength=17 />
                                                                           <span style="margin-left: 8px; color: red">* โทรศัพท์มือถือ</span>
-                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers"  NAME="t_104" maxlength=17 />
+                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number"  NAME="t_104" maxlength=17 />
                                                                         <span style="margin-left: 8px;">E-mail</span>
                                                                         <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="E-mail"  NAME="t_105" maxlength=17 />
                                                                      </div>
@@ -1465,9 +1473,9 @@
                                                                 จังหวัด<INPUT TYPE="TEXT" NAME="t_101_5" SIZE=20 MAXLENGHT=20>
                                                                 รหัสไปรษณีย์<INPUT TYPE="TEXT" NAME="t_101_6" SIZE=5 MAXLENGHT=5>
                                                                 <BR>
-                                                                โทรศัพท์<INPUT TYPE="Numbers" NAME="t_102" SIZE=15 MAXLENGHT=15>โทรสาร<INPUT TYPE="Numbers" NAME="t_103" SIZE=15 MAXLENGHT=15>
+                                                                โทรศัพท์<INPUT TYPE="Number" NAME="t_102" SIZE=15 MAXLENGHT=15>โทรสาร<INPUT TYPE="Number" NAME="t_103" SIZE=15 MAXLENGHT=15>
 
-                                                                <font color="red">*</font>โทรศัพท์มือถือ<INPUT TYPE="Numbers" NAME="t_104" SIZE=15 MAXLENGHT=15>E-mail<INPUT TYPE="TEXT" NAME="t_105" SIZE=15 MAXLENGHT=15>
+                                                                <font color="red">*</font>โทรศัพท์มือถือ<INPUT TYPE="Number" NAME="t_104" SIZE=15 MAXLENGHT=15>E-mail<INPUT TYPE="TEXT" NAME="t_105" SIZE=15 MAXLENGHT=15>
                                                                 --%>
                                                                 <span style="margin-left: 8px; color: red">* สถานที่จัดส่งเอกสาร</span>
                                                                 <INPUT TYPE="radio" name="sendadd" Value="1" style="margin-left: 5px; margin-right: 5px">ที่อยู่ปัจจุบัน
@@ -1546,15 +1554,15 @@
                                                                                         <select style="display: inline; width: 150px; margin-left: 8px" class="form-control" id="place6-1" NAME="t_110_5" class="form-control">
                                                                                         </select>
                                                                                         <span style="margin-left: 8px;">รหัสไปรษณีย์</span>
-                                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="TEXT" NAME="t_110_6" maxlength=17 />
+                                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number" NAME="t_110_6" maxlength=17 />
                                                                                     </div>
                                                                                     <div style="margin-bottom: 12px">
                                                                                         <span style="margin-left: 8px">โทรศัพท์</span>
-                                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers"  NAME="t_111" maxlength=17 />
+                                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number"  NAME="t_111" maxlength=17 />
                                                                                             <span style="margin-left: 8px;">โทรสาร</span>
-                                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers"  NAME="t_112" maxlength=17 />
+                                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number"  NAME="t_112" maxlength=17 />
                                                                                             <span style="margin-left: 8px; color: red">* โทรศัพท์มือถือ</span>
-                                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Numbers"  NAME="t_113" maxlength=17 />
+                                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="Number"  NAME="t_113" maxlength=17 />
                                                                                         <span style="margin-left: 8px;">E-mail</span>
                                                                                         <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="E-mail"  NAME="t_114" maxlength=17 />
                                                                                     </div>
@@ -1568,9 +1576,9 @@
                                                                                     จังหวัด<INPUT TYPE="TEXT" NAME="t_110_5" SIZE=20 MAXLENGHT=20>
                                                                                     รหัสไปรษณีย์<INPUT TYPE="TEXT" NAME="t_110_6" SIZE=5 MAXLENGHT=5>
                                                                                     <br>
-                                                                                    โทรศัพท์<INPUT TYPE="Numbers" NAME="t_111" SIZE=15 MAXLENGHT=15>โทรสาร<INPUT TYPE="Numbers" NAME="t_112" SIZE=15 MAXLENGHT=15>
+                                                                                    โทรศัพท์<INPUT TYPE="Number" NAME="t_111" SIZE=15 MAXLENGHT=15>โทรสาร<INPUT TYPE="Number" NAME="t_112" SIZE=15 MAXLENGHT=15>
                                                                                     <br>
-                                                                                    <font color="red">*</font>โทรศัพท์มือถือ<INPUT TYPE="Numbers" NAME="t_113" SIZE=15 MAXLENGHT=15>E-mail<INPUT TYPE="TEXT" NAME="t_114" SIZE=15 MAXLENGHT=15>--%>
+                                                                                    <font color="red">*</font>โทรศัพท์มือถือ<INPUT TYPE="Number" NAME="t_113" SIZE=15 MAXLENGHT=15>E-mail<INPUT TYPE="TEXT" NAME="t_114" SIZE=15 MAXLENGHT=15>--%>
                                                                                     
                                                                                 </div>
 
@@ -1636,7 +1644,7 @@
                                                                             </div>
                                                                              <div style="margin-bottom: 12px">
                                                                                 <span style="margin-left: 8px">เลขบัญชี</span>
-                                                                                <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" type="text" bank="TexT"  NAME="t_119" maxlength=17 />
+                                                                                <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" type="text"   NAME="t_120" maxlength=17 />
                                                                             </div>
                                                                              <div style="margin-bottom: 12px">
                                                                                 <span style="margin-left: 6px; margin-right: 6px">ประเภทบัญชี</span>
@@ -1686,7 +1694,7 @@
                                                                                                         <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="TEXT" NAME="t_121" NAME="ever1" SIZE=40 MAXLENGHT=40> พ.ศ.
 
 
-                                                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="TEXT" NAME="t_122" SIZE=10 MAXLENGHT=10><br><br>
+                                                                                                        <INPUT style="display: inline; width: 150px; margin-left: 8px" class="form-control" TYPE="number" NAME="t_122" SIZE=10 MAXLENGHT=10><br><br>
 
                                                                                             </div>
 
@@ -1885,7 +1893,7 @@
                  display: none !important;
             }
 
-            .previewContent input[type="text"], .previewContent input[type="number"], .previewContent input[type="Numbers"], .previewContent input[type="E-mail"], 
+            .previewContent input[type="text"], .previewContent input[type="number"], .previewContent input[TYPE="Number"], .previewContent input[type="E-mail"], 
             .previewContent select.form-control {
               background: transparent;
               border: none;
@@ -1896,7 +1904,7 @@
               height: 28px
             }
 
-            .previewContent input[type="text"]:focus, .previewContent input[type="number"]:focus, .previewContent input[type="Numbers"], .previewContent input[type="E-mail"], 
+            .previewContent input[type="text"]:focus, .previewContent input[type="number"]:focus, .previewContent input[TYPE="Number"], .previewContent input[type="E-mail"], 
             .previewContent select.form-control:focus {
               -webkit-box-shadow: none;
               box-shadow: none;
@@ -1928,7 +1936,7 @@
                  display: none !important;
             }
 
-            input[type="text"], input[type="number"], input[type="Numbers"], input[type="E-mail"], 
+            input[type="text"], input[type="number"], input[TYPE="Number"], input[type="E-mail"], 
             select.form-control {
               background: transparent;
               border: none;
@@ -1943,7 +1951,7 @@
                 display: none !important;
             }
 
-            input[type="text"]:focus, input[type="number"]:focus, input[type="Numbers"], input[type="E-mail"], 
+            input[type="text"]:focus, input[type="number"]:focus, input[TYPE="Number"], input[type="E-mail"], 
             select.form-control:focus {
               -webkit-box-shadow: none;
               box-shadow: none;

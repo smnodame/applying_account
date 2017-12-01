@@ -93,6 +93,8 @@ namespace WebApplication3
         {
             try
             {
+
+            
                 ConnectDataDataContext context = new ConnectDataDataContext();
                 /*==========Get Max CusNo======================================================================================*/
                 string CustNo;
@@ -123,34 +125,39 @@ namespace WebApplication3
                 context.SubmitChanges();
                 /*==========End_Account======================================================================================*/
                 /*==========LimitAccount======================================================================================*/
-                List<LimitAccount> listLimitAccount = new List<LimitAccount>();
-                for (int i = 0; i < 9; i++)
+                try
                 {
-                    LimitAccount LimitAcc = new LimitAccount();
-                    if (i == 0)
+                    List<LimitAccount> listLimitAccount = new List<LimitAccount>();
+                    for (int i = 0; i < 9; i++)
                     {
-                        if (Request.Form.Get("account") != null && Request.Form.Get("account").Contains("1"))
+                        LimitAccount LimitAcc = new LimitAccount();
+                        if (i == 0)
                         {
-                            LimitAcc.Limt = ConvertDecimal(Request.Form.Get("t_4"));
-                            LimitAcc.CustNo = CustNo;
-                            LimitAcc.TypeID = i + 1;
-                            listLimitAccount.Add(LimitAcc);
+                            if (Request.Form.Get("account") != null && Request.Form.Get("account").Contains("1"))
+                            {
+                                LimitAcc.Limt = ConvertDecimal(Request.Form.Get("t_4"));
+                                LimitAcc.CustNo = CustNo;
+                                LimitAcc.TypeID = i + 1;
+                                listLimitAccount.Add(LimitAcc);
+                            }
                         }
-                    }
-                    else
-                    {
-                        if (Request.Form.Get("account") != null && Request.Form.Get("account" + i.ToString()) == "1")
+                        else
                         {
-                            LimitAcc.Limt = ConvertDecimal(Request.Form.Get("t_" + (4 + i).ToString()));
-                            LimitAcc.CustNo = CustNo;
-                            LimitAcc.TypeID = i + 1;
-                            listLimitAccount.Add(LimitAcc);
+                            if (Request.Form.Get("account" + i.ToString())!=null&&Request.Form.Get("account" + i.ToString()).Contains("1"))
+                            {
+                                LimitAcc.Limt = ConvertDecimal(Request.Form.Get("t_" + (4 + i).ToString()));
+                                LimitAcc.CustNo = CustNo;
+                                LimitAcc.TypeID = i + 1;
+                                listLimitAccount.Add(LimitAcc);
+                            }
                         }
+
                     }
+                    context.LimitAccounts.InsertAllOnSubmit(listLimitAccount);
+                    context.SubmitChanges();
 
                 }
-                context.LimitAccounts.InsertAllOnSubmit(listLimitAccount);
-                context.SubmitChanges();
+                catch (Exception f) { }
                 /*==========End LimitAccount======================================================================================*/
                 if (Request.Form.Get("u_type") != null && Request.Form.Get("u_type") == "1")//บุคคลธรรมดา
                 {
@@ -196,7 +203,7 @@ namespace WebApplication3
                     infor.CreateDate = Request.Form.Get("t_24");
                     infor.Tel = Request.Form.Get("t_26");
                     infor.MaritalStatus = Status;
-                    infor.Guilty = Request.Form.Get("ever") != null ? Request.Form.Get("ever").Contains("1") ? true : false : false;
+                    infor.Guilty = Request.Form.Get("ever") != null ? Request.Form.Get("ever").Contains("2") ? true : false : false;
                     infor.GuiltyDes = Request.Form.Get("t_121");
                     infor.GuiltyYear = Request.Form.Get("t_122");
                     context.CustInformations.InsertOnSubmit(infor);
@@ -255,7 +262,7 @@ namespace WebApplication3
                     pcareer.Experience = Request.Form.Get("t_39");
                     pcareer.OtherIncome = Request.Form.Get("t_40");
                     pcareer.OtherSourcesIncome = Request.Form.Get("t_41");
-                    //  pcareer.AnnualSales = Request.Form.Get("t_122");
+                    pcareer.AnnualSales = Request.Form.Get("t_127");
                     pcareer.Political = Request.Form.Get("YesorNo").Contains("2") ? true : false;
                     pcareer.PoliticalPosition = Request.Form.Get("t_42");
                     context.CareerInformations.InsertOnSubmit(pcareer);
@@ -326,7 +333,7 @@ namespace WebApplication3
                         pcareer.Experience = Request.Form.Get("t_68");
                         pcareer.OtherIncome = Request.Form.Get("t_69");
                         pcareer.OtherSourcesIncome = Request.Form.Get("t_70");
-                        //  pcareer.AnnualSales = Request.Form.Get("t_122");
+                        pcareer.AnnualSales = Request.Form.Get("t_128");
                         pcareer.Political = Request.Form.Get("YesorNo2") != null ? Request.Form.Get("YesorNo2").Contains("2") ? true : false : false;
                         pcareer.PoliticalPosition = Request.Form.Get("t_71");
                         context.CareerInformations.InsertOnSubmit(pcareer);
@@ -375,6 +382,14 @@ namespace WebApplication3
                     company.Another1 = Request.Form.Get("t_82");
                     company.Another2 = Request.Form.Get("t_83");
                     context.InforCorporates.InsertOnSubmit(company);
+                    context.SubmitChanges();
+
+                    CustInformation custinfor = new CustInformation();
+                    custinfor.Guilty = Request.Form.Get("ever") != null ? Request.Form.Get("ever").Contains("1") ? true : false : false;
+                    custinfor.GuiltyDes = Request.Form.Get("t_121");
+                    custinfor.GuiltyYear = Request.Form.Get("t_122");
+                    custinfor.CustNo = CustNo;
+                    context.CustInformations.InsertOnSubmit(custinfor);
                     context.SubmitChanges();
 
                     Attorney attorneys = new Attorney();
@@ -517,6 +532,12 @@ namespace WebApplication3
             try
             {
                 ConnectDataDataContext context = new ConnectDataDataContext();
+                GenerateLink gen = new GenerateLink();
+                gen.CustNo = custno;
+                gen.htmlGen = Guid.NewGuid().ToString();
+                gen.Link = (HttpContext.Current.Request.Url.AbsoluteUri + "?ActivationCode=" + gen.htmlGen).Replace("addToDB.aspx", "RegisteredData.aspx");
+                context.GenerateLinks.InsertOnSubmit(gen);
+                context.SubmitChanges();
                 Account acc = context.Accounts.Where(a => a.CustNo == custno).FirstOrDefault();
                 string html = String.Empty ;
                 var addr = context.AddrCurrents.Join(context.CustInformations, a => a.CustNo, b => b.CustNo, (a, b) => new { CustInfor = b, Addr = a }).Where(a => a.Addr.CustNo == custno && a.Addr.TypeIDAdrr == 6).FirstOrDefault();
@@ -597,7 +618,7 @@ namespace WebApplication3
   </tr>
 </table>
 
-
+รายละเอียดเพิ่มเติม <a href=""" + gen.Link + @""">here</a>
 
 </body>
 </html>";
@@ -699,7 +720,7 @@ html=
     <td style=""padding:9px 10px 5px 0px;margin:0px;"">" + acc.type_Account + @"</td>
   </tr>
 </table>
-
+รายละเอียดเพิ่มเติม <a href=""" + gen.Link + @""">here</a>
 
 
 </body>
@@ -729,7 +750,7 @@ html=
                 smtpClient.Credentials = new System.Net.NetworkCredential()
                 {
                     UserName = "roronoa228@gmail.com",
-                    Password = "password"
+                    Password = "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"
                 };
               //  smtpClient.Credentials = CredentialCache.DefaultNetworkCredentials;
                 // Gmail works on SSL, so set this property to true

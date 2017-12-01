@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Test" Class="ConnectDataDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-HUT5VHE\SQLEXPRESS;Initial Catalog=Test;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TestConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="WebSettings" ConnectionString="Data Source=DESKTOP-HUT5VHE\SQLEXPRESS;Initial Catalog=Test;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="TestConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.AddrAnother" Member="AddrAnothers">
     <Type Name="AddrAnother">
       <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -41,43 +41,6 @@
       <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TypeID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="Limt" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.Account" Member="Accounts">
-    <Type Name="Account">
-      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="draft_date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="suggester_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="type_Account" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="total_limit" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="a_1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="a_2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="a_3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="CustNo_Mate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="SendAddr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.CustInformation" Member="CustInformations">
-    <Type Name="CustInformation">
-      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="Prefix1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="FName1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LName1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Prefix2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="FName2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="LName2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="BirthDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IDCard" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="IDGovernment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="PassportNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Expired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="CreateDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="MaritalStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="Guilty" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
-      <Column Name="GuiltyDes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
-      <Column Name="GuiltyYear" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Table Name="dbo.CareerInformation" Member="CareerInformations">
@@ -178,6 +141,50 @@
       <Column Name="Branch2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="AccountN02" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="TypeAccount2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.GenerateLink" Member="GenerateLinks">
+    <Type Name="GenerateLink">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Link" Type="System.String" DbType="NVarChar(2000)" CanBeNull="true" />
+      <Column Name="htmlGen" Type="System.String" DbType="NVarChar(200)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Account" Member="Accounts">
+    <Type Name="Account">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="draft_date" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="type_Account" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="total_limit" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="a_1" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="a_2" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="a_3" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="CustNo_Mate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SendAddr" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="suggester_name" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.CustInformation" Member="CustInformations">
+    <Type Name="CustInformation">
+      <Column Name="CustNo" Type="System.String" DbType="NVarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Prefix1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FName1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LName1" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Prefix2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="FName2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="LName2" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="BirthDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDCard" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="IDGovernment" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Nationality" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="PassportNo" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Expired" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="CreateDate" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Tel" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="MaritalStatus" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Guilty" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="GuiltyDes" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="GuiltyYear" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
     </Type>
   </Table>
   <Function Name="dbo.DeleteNoSuccessSP" Method="DeleteNoSuccessSP">

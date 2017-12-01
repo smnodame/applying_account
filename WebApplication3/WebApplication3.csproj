@@ -87,6 +87,7 @@
     <Content Include="js\bootstrap.js.map" />
     <Content Include="js\bootstrap.min.js.map" />
     <Content Include="preview.aspx" />
+    <Content Include="RegisteredData.aspx" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="ConnectData.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -199,6 +200,13 @@
     </Compile>
     <Compile Include="addToDB.aspx.designer.cs">
       <DependentUpon>addToDB.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RegisteredData.aspx.cs">
+      <DependentUpon>RegisteredData.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RegisteredData.aspx.designer.cs">
+      <DependentUpon>RegisteredData.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
